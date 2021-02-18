@@ -5,6 +5,7 @@ cache: npm
 script: npm run travis
 before_deploy:
   # Set up git user name and tag this commit
+  - tar -zcf ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz build
   - git config --local user.name "ofirattia"
   - git config --local user.email "ofirattia@gmail.com"
   - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
@@ -18,7 +19,7 @@ deploy:
   - provider: releases
     api_key: $GITHUB_TOKEN
     file_glob: true
-    file: build/**/*
+    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
     skip_cleanup: true
     on:
       tags: true
