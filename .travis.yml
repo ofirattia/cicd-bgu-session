@@ -4,8 +4,15 @@ node_js:
 cache: npm
 script: npm run travis
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
-  keep-history: true
-  target-branch: master
+  - provider: pages
+    skip_cleanup: true
+    github-token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
+    keep-history: true
+    target-branch: master
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: build/*
+    skip_cleanup: true
+    on:
+      tags: true
