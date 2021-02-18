@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/ofirattia/pokedex.svg?branch=master)](https://travis-ci.com/ofirattia/pokedex)
 
-
+ 
 List of pokemons on the basis of React + Redux
 
 ## Available Scripts
