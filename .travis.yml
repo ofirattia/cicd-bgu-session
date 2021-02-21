@@ -12,12 +12,12 @@ before_deploy:
   - git tag $TRAVIS_TAG --force
 deploy:
   provider: releases
-    api_key: $GITHUB_TOKEN
-    file_glob: true
-    file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
-    skip_cleanup: true
-    on:
-      tags: true
+  api_key: $GITHUB_TOKEN
+  file_glob: true
+  file: ${TRAVIS_BUILD_DIR}${REPO}-${BUILD_ENV}-${TRAVIS_TAG}-${TRAVIS_BUILD_NUMBER}.tar.gz
+  skip_cleanup: true
+  on:
+    tags: true
 branches:
   only:
     - master
