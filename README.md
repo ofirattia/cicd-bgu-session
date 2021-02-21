@@ -1,6 +1,6 @@
-# CI/CD Workshop - Pokedex
+# CI/CD Workshop - Pokedex 
 
-[![Build Status](https://travis-ci.com/ofirattia/pokedex.svg?branch=master)](https://travis-ci.com/ofirattia/pokedex)
+[![Build Status](https://travis-ci.com/ofirattia/cicd-bgu-session.svg?branch=master)](https://travis-ci.com/ofirattia/cicd-bgu-session)
 
  
 List of pokemons on the basis of React + Redux
